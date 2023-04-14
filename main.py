@@ -29,9 +29,9 @@ def get_random_color():
     return "#%06x" % random.randint(0, 0xFFFFFF)
 
 def get_weather(city):
-    url = "https://v0.yiketianqi.com/api?unescape=1&version=v91&appid=43656176&appsecret=I42og6Lm&city=" + city
+    url = "https://restapi.amap.com/v3/weather/weatherInfo?key=806b0acaa5cc335d348cd99ef73aa1de&city=110108"
     res = requests.get(url).json()
-    weather = res['data'][0]
+    weather = res['forecasts'][0]['casts'][0]
     return weather
 
 def get_count(born_date):
@@ -72,7 +72,7 @@ for user_info in data:
         'color': get_random_color()
         }
     data['weather'] = {
-        'value': weather['wea'], 
+        'value': weather['dayweather'], 
         'color': '#002fa4'
         }
     data['city'] = {
@@ -80,11 +80,11 @@ for user_info in data:
         'color': get_random_color()
         }
     data['tem_high'] = {
-        'value': weather['tem1'], 
+        'value': weather['nighttemp'], 
         'color': '#D44848'
         }
     data['tem_low'] = {
-        'value': weather['tem2'], 
+        'value': weather['daytemp'], 
         'color': '#01847F'
         }
     data['born_days'] = {
@@ -96,11 +96,11 @@ for user_info in data:
         'color': get_random_color()
         }
     data['air'] = {
-        'value': weather['air_level'], 
+        'value': '差', 
         'color': get_random_color()
         }
     data['wind'] = {
-        'value': weather['win'][0], 
+        'value': weather['daypower'][0], 
         'color': get_random_color()
         }
     data['name'] = {
@@ -108,7 +108,7 @@ for user_info in data:
         'color': get_random_color()
         }
     data['uv'] = {
-        'value': weather['uvDescription'], 
+        'value': '弱', 
         'color': get_random_color()
         }
     
