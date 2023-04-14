@@ -29,7 +29,7 @@ def get_random_color():
     return "#%06x" % random.randint(0, 0xFFFFFF)
 
 def get_weather(city):
-    url = "https://restapi.amap.com/v3/weather/weatherInfo?key=806b0acaa5cc335d348cd99ef73aa1de&city=110108"
+    url = "https://restapi.amap.com/v3/weather/weatherInfo?key=806b0acaa5cc335d348cd99ef73aa1de&city=110108&extensions=all"
     res = requests.get(url).json()
     weather = res['forecasts'][0]['casts'][0]
     return weather
