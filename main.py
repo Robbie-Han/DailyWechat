@@ -12,6 +12,7 @@ today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d")
 app_id = os.getenv("APP_ID")
 app_secret = os.getenv("APP_SECRET")
 template_id = os.getenv("TEMPLATE_ID")
+start_day = os.getenv("START_DATE")
 
 def get_time():
     dictDate = {'Monday': '星期一', 'Tuesday': '星期二', 'Wednesday': '星期三', 'Thursday': '星期四',
@@ -37,7 +38,6 @@ def get_weather(city):
 def get_count(born_date):
     delta = today - datetime.strptime(born_date, "%Y-%m-%d")
     return delta.days
-
 
 def get_birthday(birthday):
     nextdate = datetime.strptime(str(today.year) + "-" + birthday, "%Y-%m-%d")
@@ -91,6 +91,10 @@ for user_info in data:
         'value': get_count(born_date), 
         'color': get_random_color()
         }
+    data['love_days'] = {
+        'value': get_count(start_day), 
+        'color': get_random_color()
+        }
     data['birthday_left'] = {
         'value': get_birthday(birthday), 
         'color': get_random_color()
@@ -100,7 +104,7 @@ for user_info in data:
         'color': get_random_color()
         }
     data['wind'] = {
-        'value': weather['daypower'][0], 
+        'value': weather['daypower'], 
         'color': get_random_color()
         }
     data['name'] = {
