@@ -104,6 +104,10 @@ for user_info in data:
         'color': get_random_color()
         }
     data['wind'] = {
+        'value': weather['daywind'], 
+        'color': get_random_color()
+        }
+    data['wind_power'] = {
         'value': weather['daypower'], 
         'color': get_random_color()
         }
