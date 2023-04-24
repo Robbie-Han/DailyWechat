@@ -29,8 +29,7 @@ def get_words():
 def get_random_color():
     return "#%06x" % random.randint(0, 0xFFFFFF)
 
-def get_weather(city):
-    url = "https://restapi.amap.com/v3/weather/weatherInfo?key=806b0acaa5cc335d348cd99ef73aa1de&city=110108&extensions=all"
+def get_weather(city, url):
     res = requests.get(url).json()
     weather = res['forecasts'][0]['casts'][0]
     return weather
@@ -57,10 +56,11 @@ for user_info in data:
     born_date = user_info['born_date']
     birthday = born_date[5:]
     city = user_info['city']
+    api = user_api['api']
     user_id = user_info['user_id']
     name=user_info['user_name'].upper()
     
-    weather= get_weather(city)
+    weather= get_weather(city, api)
 
     data = dict()
     data['time'] = {
