@@ -4,14 +4,14 @@
       "user_name": "Robbie",
       "user_id": "o11jr5-8BmB_7vDLoNK7LmUVueTw",
       "born_date": "1994-03-01",
-      "api": "https://restapi.amap.com/v3/weather/weatherInfo?key=806b0acaa5cc335d348cd99ef73aa1de&city=110108&extensions=all"
+      "api": "https://restapi.amap.com/v3/weather/weatherInfo?key=806b0acaa5cc335d348cd99ef73aa1de&city=110108&extensions=all",
       "city": "海淀"
     },
     {
       "user_name": "娜娜",
       "user_id": "o11jr52E2CwYLh3lurrGmBPazziE",
       "born_date": "1995-02-16",
-      "api": "https://restapi.amap.com/v3/weather/weatherInfo?key=806b0acaa5cc335d348cd99ef73aa1de&city=130723&extensions=all"
+      "api": "https://restapi.amap.com/v3/weather/weatherInfo?key=806b0acaa5cc335d348cd99ef73aa1de&city=130723&extensions=all",
       "city": "康保县"
     }
   ]
