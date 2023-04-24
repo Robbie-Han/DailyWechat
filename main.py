@@ -56,7 +56,7 @@ for user_info in data:
     born_date = user_info['born_date']
     birthday = born_date[5:]
     city = user_info['city']
-    api = user_api['api']
+    api = user_info['api']
     user_id = user_info['user_id']
     name=user_info['user_name'].upper()
     
